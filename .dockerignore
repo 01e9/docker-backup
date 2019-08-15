@@ -1,0 +1,5 @@
+*
+!.dockerignore
+!entrypoint.bash
+!Dockerfile
+!backup.bash
