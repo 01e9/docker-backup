@@ -23,7 +23,7 @@ docker run \
   --volumes-from $(hostname) \
   ${VOLUMES} \
   busybox \
-  sh -c "cd /v && tar -czf /tmp/${ARCHIVE_NAME} * && mv /tmp/${ARCHIVE_NAME} /backup/archives/"
+  sh -c "cd /volumes && tar -czf /tmp/${ARCHIVE_NAME} * && mv /tmp/${ARCHIVE_NAME} /backup/archives/"
 
 docker start ${CONTAINERS}
 

@@ -1,6 +1,6 @@
 # Backup docker volumes
 
-**stop containers** -> **archive volumes** -> **start containers** 
+**stop containers** -> **archive volumes** -> **start containers** -> **delete old archives**
 
 ## Usage
 
