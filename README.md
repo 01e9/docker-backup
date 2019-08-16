@@ -14,7 +14,7 @@ docker run --rm \
     -d some_volume_name:some_dir_name \
     -c another_container \
     -d another_volume_name:another_dir_name \
-    -d more_volume_name:more_dir_name
+    -d more_volume_name:more_dir_name/sub_dir
 ```
 
 ## Optional environment variables
@@ -33,6 +33,8 @@ docker run --rm \
 
     Command to generate a read/write secret `rslsync --generate-secret`.
 * `SLACK_WEBHOOK='https://hooks.slack.com/services/...'`
+
+    It will send in Slack channel messages like "Backup started/finished/error".
 
     https://api.slack.com/incoming-webhooks
 
