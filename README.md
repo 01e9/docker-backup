@@ -20,10 +20,19 @@ docker run --rm \
 ## Optional environment variables
 
 * `BACKUP_TIME='03:00:00'`
-* `SLACK_WEBHOOK='https://hooks.slack.com/services/...'`
+* `TZ=Europe/Chisinau`
 
-    https://api.slack.com/incoming-webhooks
+    Makes `BACKUP_TIME` match host machine time.
+
+    Command to get timezone (on Ubuntu) `cat /etc/timezone`.
 * `RESILIO_SECRET_RW='...'`
 
     By default it will be generated automatically and printed in console.
+
     You can find it inside container in `/etc/resilio.conf`.
+
+    Command to generate a read/write secret `rslsync --generate-secret`.
+* `SLACK_WEBHOOK='https://hooks.slack.com/services/...'`
+
+    https://api.slack.com/incoming-webhooks
+

@@ -8,8 +8,10 @@ ENV BACKUP_TIME='03:00:00'
 RUN apk add --update \
         # for `trap '...' ERR`
         bash \
-        # Install `date` that supports `-d 'tomorrow'`
+        # Install `date` that supports `-d`
         coreutils \
+        # For env "TZ=Europe/Chisinau" to work
+        tzdata \
     # Resilio dependencies
     && apk --no-cache add ca-certificates \
         && wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub \
