@@ -21,3 +21,9 @@ docker run --rm \
 * `SLACK_WEBHOOK='https://hooks.slack.com/services/...'`
 
     https://api.slack.com/incoming-webhooks
+* `RESILIO_SECRET_RW='...'`
+
+    https://www.resilio.com/platforms/desktop/
+
+    By default it will be generated automatically and printed in console.
+    You can find it inside container in `/etc/resilio.conf`.

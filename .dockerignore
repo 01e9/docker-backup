@@ -1,5 +1,5 @@
 *
 !.dockerignore
-!entrypoint.bash
 !Dockerfile
-!backup.bash
+!*.bash
+!*.conf.template

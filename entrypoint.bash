@@ -31,7 +31,7 @@ VOLUMES=$(echo "${VOLUMES}" | xargs)
 echo "Containers: ${CONTAINERS}"
 echo "Volumes: ${VOLUMES}"
 
-# todo: start resilio
+/resilio.start.bash
 
 while true
 do
