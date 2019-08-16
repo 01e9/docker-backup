@@ -35,11 +35,11 @@ echo "Volumes: ${VOLUMES}"
 
 while true
 do
-    SLEEP_SECONDS=$(($(date -d "tomorrow ${BACKUP_TIME}" +%s) - $(date +%s)))
-    echo "Sleeping ${SLEEP_SECONDS} seconds until ${BACKUP_TIME}"
-    sleep ${SLEEP_SECONDS}
-
     echo "Backup started"
     /backup.bash "${CONTAINERS}" "${VOLUMES}"
     echo "Backup finished"
+
+    SLEEP_SECONDS=$(($(date -d "tomorrow ${BACKUP_TIME}" +%s) - $(date +%s)))
+    echo "Sleeping ${SLEEP_SECONDS} seconds until ${BACKUP_TIME}"
+    sleep ${SLEEP_SECONDS}
 done
