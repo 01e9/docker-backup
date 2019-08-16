@@ -2,6 +2,8 @@
 
 **stop containers** -> **archive volumes** -> **start containers** -> **delete old archives**
 
+Archives directory is synced with [Resilio](https://www.resilio.com/platforms/desktop/).
+
 ## Usage
 
 ```sh
@@ -22,8 +24,6 @@ docker run --rm \
 
     https://api.slack.com/incoming-webhooks
 * `RESILIO_SECRET_RW='...'`
-
-    https://www.resilio.com/platforms/desktop/
 
     By default it will be generated automatically and printed in console.
     You can find it inside container in `/etc/resilio.conf`.
