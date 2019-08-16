@@ -36,3 +36,23 @@ docker run --rm \
 
     https://api.slack.com/incoming-webhooks
 
+## [docker-compose](https://docs.docker.com/compose/) example
+
+```yaml
+services:
+    my_backup:
+        image: 01e9/docker-backup
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        environment:
+            TZ: "Europe/Chisinau"
+            RESILIO_SECRET_RW: "A6Z...7VE"
+        command: [
+            "-c", "container_1",
+            "-c", "container_2",
+            "-d", "volume_name_1:directory_name_1",
+            "-d", "volume_name_2:directory_name_2/sub_directory_1",
+        ]
+        restart: unless-stopped
+```
+
