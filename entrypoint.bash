@@ -40,7 +40,11 @@ do
     echo "Backup finished"
 
     SLEEP_SECONDS=$(($(date -d "tomorrow ${BACKUP_TIME}" +%s) - $(date +%s)))
-    SLEEP_TIME=$(date -d "@$(($(date -d '00:00:00' +%s) + ${SLEEP_SECONDS}))" +%T)
-    echo "Sleeping ${SLEEP_TIME} until ${BACKUP_TIME}"
+    SLEEP_TIME=$(printf "%02d:%02d:%02d" \
+        $((SLEEP_SECONDS / 60 / 60)) \
+        $((SLEEP_SECONDS / 60 % 60)) \
+        $((SLEEP_SECONDS % 60)))
+    echo "Sleeping ${SLEEP_TIME} (${SLEEP_SECONDS} seconds) until ${BACKUP_TIME}"
     sleep ${SLEEP_SECONDS}
 done
+
